@@ -6,11 +6,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import pandas as pd
 
-Page Title
+#Page Title
 
 st.title("🎬 Movie Recommendation System")
 
-Movie Dataset
+#Movie Dataset
 
 movies = [
 "Avengers is a superhero action movie",
@@ -22,7 +22,7 @@ movies = [
 "The Martian is about survival in space"
 ]
 
-Load Embedding Model
+#Load Embedding Model
 
 @st.cache_resource
 def load_model():
@@ -30,11 +30,11 @@ return SentenceTransformer("all-MiniLM-L6-v2")
 
 model = load_model()
 
-Generate Movie Embeddings
+#Generate Movie Embeddings
 
 movie_embeddings = model.encode(movies)
 
-User Input
+#User Input
 
 query = st.text_input(
 "Enter your movie preference:",
