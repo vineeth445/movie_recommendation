@@ -8,25 +8,25 @@ import pandas as pd
 
 Page Title
 
-st.title(“🎬 Movie Recommendation System”)
+st.title("🎬 Movie Recommendation System")
 
 Movie Dataset
 
 movies = [
-“Avengers is a superhero action movie”,
-“Iron Man is a superhero movie”,
-“Batman fights crime in Gotham”,
-“Titanic is a romantic drama”,
-“The Notebook is a love story”,
-“Interstellar is a science fiction space movie”,
-“The Martian is about survival in space”
+"Avengers is a superhero action movie",
+"Iron Man is a superhero movie",
+"Batman fights crime in Gotham",
+"Titanic is a romantic drama",
+"The Notebook is a love story",
+"Interstellar is a science fiction space movie",
+"The Martian is about survival in space"
 ]
 
 Load Embedding Model
 
 @st.cache_resource
 def load_model():
-return SentenceTransformer(“all-MiniLM-L6-v2”)
+return SentenceTransformer("all-MiniLM-L6-v2")
 
 model = load_model()
 
@@ -37,8 +37,8 @@ movie_embeddings = model.encode(movies)
 User Input
 
 query = st.text_input(
-“Enter your movie preference:”,
-placeholder=“Example: I love crime movies”
+"Enter your movie preference:",
+placeholder="Example: I love crime movies"
 )
 
 if query:
